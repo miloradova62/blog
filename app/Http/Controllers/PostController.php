@@ -12,7 +12,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::query()->where('is_published', '=', true)->get();
+
+        return $posts;
     }
 
     /**
@@ -20,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -28,15 +30,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post): string|Post
     {
-        //
+        return $post->is_published ? $post : 'Такой пост не существует :(';
     }
 
     /**
