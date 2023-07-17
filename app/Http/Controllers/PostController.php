@@ -14,7 +14,8 @@ class PostController extends Controller
     {
         $posts = Post::query()->where('is_published', '=', true)->get();
 
-        return $posts;
+     //   return view('posts', ['posts'=>$posts]);
+        return view('posts', compact ('posts'));
     }
 
     /**
