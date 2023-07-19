@@ -25,11 +25,11 @@
 
             <div class="col-md-12 col-sm-12">
                 <ul class="social-icon">
-                    <li><a href="#" class="fa fa-facebook">facebook</a></li>
-                    <li><a href="#" class="fa fa-twitter">twitter</a></li>
-                    <li><a href="#" class="fa fa-google-plus">google</a></li>
-                    <li><a href="#" class="fa fa-dribbble">dribble</a></li>
-                    <li><a href="#" class="fa fa-linkedin">linkedin</a></li>
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-google-plus"></a></li>
+                    <li><a href="#" class="fa fa-dribbble"></a></li>
+                    <li><a href="#" class="fa fa-linkedin"></a></li>
                 </ul>
             </div>
 
@@ -42,13 +42,13 @@
 
 <!-- SCRIPTS -->
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/particles.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/jquery.parallax.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/custom.js"></script>
+<script src="{{ asset('assets/js/jquery.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/particles.min.js') }}"></script>
+<script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.parallax.js') }}"></script>
+<script src="{{ asset('assets/js/smoothscroll.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 
 </body>
 </html>

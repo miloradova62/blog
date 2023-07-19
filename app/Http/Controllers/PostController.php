@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -10,12 +13,12 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): Factory|Application|View
     {
         $posts = Post::query()->where('is_published', '=', true)->get();
 
      //   return view('posts', ['posts'=>$posts]);
-        return view('posts', compact ('posts'));
+        return view('posts.index', compact ('posts'));
     }
 
     /**
@@ -37,9 +40,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post): string|Post
+    public function show(Post $post): Factory|Application|View|string
     {
-        return $post->is_published ? $post : 'Такой пост не существует :(';
+        return $post->is_published ? \view('posts.show', compact('post')) : 'Такой пост не существует :(';
     }
 
     /**

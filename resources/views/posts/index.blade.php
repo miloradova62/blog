@@ -9,7 +9,7 @@
                 <div class="blog-post-thumb">
                     <div class="blog-post-image">
                         <a href="single-post.html">
-                            <img src="images/blog-image1.jpg" class="img-responsive" alt="Blog Image">
+                            <img src="{{ asset('assets/images/blog-image1.jpg') }}" class="img-responsive" alt="Blog Image">
                         </a>
                     </div>
                     <div class="blog-post-title">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="blog-post-des">
                         <p>{{ $post->description }}</p>
-                        <a href="single-post.html" class="btn btn-default">Читать далее</a>
+                        <a href="{{ route('posts.show',[$post->id]) }}" class="btn btn-default">Читать далее</a>
                     </div>
                 </div>
             </div>
