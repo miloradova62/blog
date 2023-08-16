@@ -32,6 +32,9 @@
                             </div>
                             <div class="media-body">
                                 <h3 class="media-heading"><a href="#">Jen Lopez ( Designer )</a></h3>
+                                <div class="button">
+                                    <a href="{{ route('posts.edit', [$post]) }}">Редактировать</a>
+                                </div>
                             </div>
                         </div>
                     </div>
