@@ -7,18 +7,19 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): Factory|Application|View
+    public function index(): View|Application|Factory
     {
         $posts = Post::query()->where('is_published', '=', true)->get();
 
-     //   return view('posts', ['posts'=>$posts]);
-        return view('posts.index', compact ('posts'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -26,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -34,23 +35,27 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post): Factory|Application|View|string
+    public function show(Post $post): View|Application|Factory
     {
-        return $post->is_published ? \view('posts.show', compact('post')) : 'Такой пост не существует :(';
+        if (!$post->is_published) {
+            abort(ResponseAlias::HTTP_NOT_FOUND);
+        }
+
+        return view('posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Post $post): View|Application|Factory
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -66,6 +71,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
     }
 }

@@ -1,5 +1,4 @@
 @include('layouts.header')
-
 <!-- Blog Single Post Section -->
 
 <section id="blog-single-post">
@@ -13,8 +12,9 @@
                     <div class="blog-post-title">
                         <h2>{{ $post->title }}</h2>
                     </div>
+
                     <div class="blog-post-format">
-                        <span><a href="#"><img src="{{ asset ('assets/images/author-image1.jpg') }}" class="img-responsive img-circle"> Jen Lopez</a></span>
+                        <span><a href="#"><img src="{{ asset('assets/images/author-image1.jpg') }}" class="img-responsive img-circle"> Jen Lopez</a></span>
                         <span><i class="fa fa-date"></i> {{ $post->updated_at }}</span>
                         <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
                     </div>
@@ -40,7 +40,7 @@
                         <h3>Comments</h3>
                         <div class="media">
                             <div class="media-object pull-left">
-                                <img src="{{ asset ('assets/images/comment-image1.jpg') }}" class="img-responsive img-circle" alt="Blog Image 11">
+                                <img src="{{ asset('assets/images/comment-image1.jpg') }}" class="img-responsive img-circle" alt="Blog Image 11">
                             </div>
                             <div class="media-body">
                                 <h3 class="media-heading">David Jones</h3>
@@ -67,4 +67,5 @@
     </div>
 </section>
 
+<!-- Footer Section -->
 @include('layouts.footer')
