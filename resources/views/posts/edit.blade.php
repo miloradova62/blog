@@ -4,11 +4,12 @@
 
 <form action ="{{ route('posts.update', [$post]) }}" method="post">
     @csrf
+    @method('put')
     <label for="title">
         <input type="text" name="title" id="title" value='{{ $post->title }}'>
     </label>
-    <label for="content">
-        <textarea name="content" id="content" cols="30" rows="10">
+    <label for="editor">
+        <textarea name="content" id="editor" cols="30" rows="10">
             {{ $post->content }}
         </textarea>
     </label>

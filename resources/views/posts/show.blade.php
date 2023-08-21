@@ -23,7 +23,7 @@
                         <p>{{ $post->description }}</p>
                     </div>
 
-                    <p>{{ $post->content }}</p>
+                    <div>{{ $post->content }}</div>
 
                     <div class="blog-author">
                         <div class="media">
