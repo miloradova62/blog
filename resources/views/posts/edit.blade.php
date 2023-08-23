@@ -8,8 +8,8 @@
     <label for="title">
         <input type="text" name="title" id="title" value='{{ $post->title }}'>
     </label>
-    <label for="editor">
-        <textarea name="content" id="editor" cols="30" rows="10">
+    <label for="content">
+        <textarea name="content" id="content" cols="30" rows="10">
             {{ $post->content }}
         </textarea>
     </label>
@@ -27,5 +27,13 @@
     </label>
     <button type="submit">Сохранить</button>
 </form>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#content' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 
 @include('layouts.footer')

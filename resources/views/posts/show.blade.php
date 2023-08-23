@@ -20,10 +20,10 @@
                     </div>
 
                     <div class="blog-post-des">
-                        <p>{{ $post->description }}</p>
+                        <p>{!! $post->description !!}</p>
                     </div>
 
-                    <div>{{ $post->content }}</div>
+                    <div>{!! $post->content !!}</div>
 
                     <div class="blog-author">
                         <div class="media">
