@@ -23,14 +23,26 @@
                     </div>
                     <div class="blog-post-des">
                         <p>{{ $post->description }}</p>
-                        <a href="{{ route('posts.show', [$post->id]) }}" class="btn btn-default">Читать давлее...</a>
+                        <a href="{{ route('posts.show', [$post->id]) }}" class="btn btn-default">Читать далее...</a>
                     </div>
                 </div>
                 @endforeach
             </div>
-
+            <button class="btn_edit">
+                <a href="{{ route('posts.create', [$post]) }}">Создать новый пост</a>
+            </button>
+            <br><br>
+            <form action="{{ route('posts.destroy', [$post]) }}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn btn-primary">
+                    Удалить
+                </button>
+            </form>
         </div>
     </div>
 </section>
+
+
 
 @include('layouts.footer')
