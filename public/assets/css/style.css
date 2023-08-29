@@ -396,6 +396,10 @@ a:hover, a:active, a:focus {
   text-align: center;
 }
 
+.flex {
+    display: flex;
+}
+
 
 
 /*---------------------------------------

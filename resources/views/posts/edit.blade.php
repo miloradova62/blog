@@ -25,13 +25,16 @@
             id="is_published"
             {{ $post->is_published ? 'checked' : ' ' }}>
     </label>
-    <button type="submit">Сохранить</button>
+    <div class="flex">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+
 </form>
 <form action="{{ route('posts.destroy', [$post]) }}" method="post">
     @csrf
     @method('delete')
-    <button class="btn" type="submit">Удалить</button>
+    <button type="submit" class="btn btn-danger">Удалить</button>
 </form>
+</div>
 <script>
     ClassicEditor
         .create( document.querySelector( '#content' ) )
